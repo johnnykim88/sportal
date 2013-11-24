@@ -1,0 +1,26 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  username: tron
+  password: secret
+  database: sportaldev
+  pool: 5
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  username: tron
+  password: secret
+  database: sportaltest
+  pool: 5
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  username: tron
+  password: secret
+  database: sportalprod
+  pool: 5

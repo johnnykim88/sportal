@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  meetdate: 2013-11-24
+  recurring: false
+  address: MyString
+  latitude: 1.5
+  longitude: 1.5
+  start_at: 2013-11-24 13:51:09
+  end_at: 2013-11-24 13:51:09
+
+two:
+  meetdate: 2013-11-24
+  recurring: false
+  address: MyString
+  latitude: 1.5
+  longitude: 1.5
+  start_at: 2013-11-24 13:51:09
+  end_at: 2013-11-24 13:51:09

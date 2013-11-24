@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Meetdate:</b>
+  <%= @meeting.meetdate %>
+</p>
+
+<p>
+  <b>Recurring:</b>
+  <%= @meeting.recurring %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @meeting.address %>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @meeting.latitude %>
+</p>
+
+<p>
+  <b>Longitude:</b>
+  <%= @meeting.longitude %>
+</p>
+
+<p>
+  <b>Start at:</b>
+  <%= @meeting.start_at %>
+</p>
+
+<p>
+  <b>End at:</b>
+  <%= @meeting.end_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_meeting_path(@meeting) %> |
+<%= link_to 'Back', meetings_path %>
