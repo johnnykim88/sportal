@@ -1,26 +1,28 @@
 <div class="contents"> 
+
   <div class="container">
     <div id="dg">
       <%= simple_form_for @meeting, :html => { :class => 'form-horizontal' } do |f| %>
-        
-        <%= f.collection_select :sport_id, @sports, :id, :name  %>
-      
+        <div class="field">
+          <p style="margin-bottom:-5px;">Select Sport</p>
+          <%= f.collection_select :sport_id, @sports, :id, :name  %>
+        </div><br/>
         <div class="field">
           <%= f.label :meetdate %><br />
          <%= f.text_field :meetdate %>
-        </div>
+        </div><br/>
         <div class="field">
           <%= f.label :address %><br />
-          <%= f.input :address %>
-        </div>
+          <%= f.text_field :address %>
+        </div><br/>
         <div class="field">
             <%= f.label :start_at %><br />
             <%= f.text_field :start_at %>
-        </div>
+        </div><br/>
          <div class="field">
           <%= f.label :end_at %><br />
           <%= f.text_field :end_at %>
-        </div>
+        </div><br/>
        
         <div class="field">
           <%= f.label :recurring %><br />

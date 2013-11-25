@@ -38,6 +38,7 @@ class SportsController < ApplicationController
   # POST /sports.json
   def create
        @sport = current_user.sports.create(params[:sport])
+       
       if @sport.save
         redirect_to dashboard_path
       else

@@ -1,0 +1,21 @@
+<table class="table table-bordered"> 
+  <tr>
+    <th>Sport</th>
+    <th>Date</th>
+    <th>Start Time</th>
+    <th>Time Frame</th>
+    <th>Location</th>
+   
+  </tr>
+  <% @meetings.each do |meeting| %>
+    <tr>
+      
+      <td><%= meeting.sport.name unless nil? %></td>
+      <td><%= meeting.meetdate.try(:strftime, '%A  %B  %e')  %></td>
+      <td><%= meeting.start_at.strftime('%I : %M %P') %></td>
+      <td><%= distance_of_time_in_words meeting.start_at, meeting.end_at %></td>
+      <td><%= meeting.address %></td>
+      
+    </tr>
+  <% end %>
+</table>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131124222404) do
+ActiveRecord::Schema.define(:version => 20131125000057) do
 
   create_table "meetings", :force => true do |t|
     t.date     "meetdate"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(:version => 20131124222404) do
     t.integer  "sport_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "rating"
   end
 
   add_index "user_sports", ["sport_id"], :name => "index_user_sports_on_sport_id"

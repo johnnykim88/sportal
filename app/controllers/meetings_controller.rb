@@ -43,16 +43,11 @@ class MeetingsController < ApplicationController
   # POST /meetings.json
   def create
     @meeting = Meeting.new(params[:meeting])
-
-    respond_to do |format|
+    @meeting = current_user.meetings.create(params[:meeting])
       if @meeting.save
-        format.html { redirect_to @meeting, notice: 'Meeting was successfully created.' }
-        format.json { render json: @meeting, status: :created, location: @meeting }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @meeting.errors, status: :unprocessable_entity }
+          redirect_to dashboard_path
+        else
       end
-    end
   end
 
   # PUT /meetings/1
