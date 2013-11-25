@@ -1,35 +1,41 @@
-<h1>Listing meetings</h1>
+<div class="contents"> 
+  <div class="container">
+    <div id="dg">
+        <h1>Listing meetings</h1>
 
-<table>
-  <tr>
-    <th>Meetdate</th>
-    <th>Recurring</th>
-    <th>Address</th>
-    <th>Latitude</th>
-    <th>Longitude</th>
-    <th>Start at</th>
-    <th>End at</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+        <table class="table table-bordered">
+          <tr>
+            <th>Sport ID</th>
+            <th>Sport</th>
+            <th>Meetdate</th>
+            <th>Address</th>
+            <th>Time Block</th>
+            <th>Start at</th>
+            <th>End at</th>
+            <th></th>
+            <th></th>
+          </tr>
+        
+        <% @meetings.each do |meeting| %>
+          <tr>
+            <td><%= meeting.sport.id %></td>
+            <td><%= meeting.sport.name %></td>
+            <td><%= meeting.meetdate.try(:strftime, '%A  %B  %e')  %></td>
+            <td><%= meeting.address %></td>
+            <td><%= distance_of_time_in_words meeting.start_at, meeting.end_at %></td>
+            <td><%= meeting.start_at.try(:strftime, '%I : %M %P') %></td>
+            <td><%= meeting.end_at.try(:strftime, '%I : %M %P') %></td>
+            <td><%= link_to 'Edit', edit_meeting_path(meeting) %></td>
+            <td><%= link_to 'Destroy', meeting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+          
+        <% end %>
+      
+        </table>
 
-<% @meetings.each do |meeting| %>
-  <tr>
-    <td><%= meeting.meetdate %></td>
-    <td><%= meeting.recurring %></td>
-    <td><%= meeting.address %></td>
-    <td><%= meeting.latitude %></td>
-    <td><%= meeting.longitude %></td>
-    <td><%= meeting.start_at %></td>
-    <td><%= meeting.end_at %></td>
-    <td><%= link_to 'Show', meeting %></td>
-    <td><%= link_to 'Edit', edit_meeting_path(meeting) %></td>
-    <td><%= link_to 'Destroy', meeting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+        <br />
 
-<br />
-
-<%= link_to 'New Meeting', new_meeting_path %>
+        <%= link_to 'New Meeting', new_meeting_path %>
+    </div>
+</div>
+</div>

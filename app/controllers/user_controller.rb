@@ -1,5 +1,9 @@
 class UserController < ApplicationController
 
+	def list
+
+		@Users= User.all
+	end
 
 	def dashboard
 

@@ -8,4 +8,12 @@ class Sport < ActiveRecord::Base
 
   accepts_nested_attributes_for :user_sports
 
+  
+  # def self.equal_to(name)
+  # 	where("sports.name = ?", name)
+  # end
+
+  # scope :match, equal_to(name)
+
+
 end

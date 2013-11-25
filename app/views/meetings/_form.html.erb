@@ -1,10 +1,9 @@
 <div class="contents"> 
-
   <div class="container">
     <div id="dg">
       <%= simple_form_for @meeting, :html => { :class => 'form-horizontal' } do |f| %>
          <div class="form-group">
-          <p style="margin-bottom:-5px;">Select Sport</p>
+          <p style="margin-bottom:-3px;">Select Sport</p>
           <%= f.collection_select :sport_id, @sports, :id, :name  %>
         </div><br/>
         <div class="form-group">

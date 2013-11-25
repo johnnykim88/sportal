@@ -1,17 +1,27 @@
 Sportal::Application.routes.draw do
  
+	resources :meetings do
+	     collection do
+	      match 'search' => 'meetings#search', via: [:get, :post], as: :search
+	     end
+	  end
  
-  resources :users, only: [:show, :edit, :update]
+ 
+	  # resources :users, only: [:show, :edit, :update]
 
-  resources :meetings
+	  resources :user_meetings
+	  resources :meetings
 
 
-  resources :sports
+	  resources :sports
 
 
-  devise_for :users
+	  devise_for :users
 
-root to: 'static_pages#home'
+		root to: 'static_pages#home'
 
-match '/dashboard', to: 'static_pages#dashboard' 
+		match '/match', to: 'meetings#match' 
+		match '/list', to: 'users#list' 
+		match '/dashboard', to: 'static_pages#dashboard' 
+		match '/search', to: 'meetings#search'
 end

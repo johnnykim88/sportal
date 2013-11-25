@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :remember_me, :photo, :zip, :latitude, :longitude, :sports_attributes
@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
   					:path => ":rails_root/public/assets/images/avatar/:basename.:extension"
 
 
-
+  
 
 
 end

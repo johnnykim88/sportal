@@ -14,8 +14,9 @@
 		<div class="col-lg-10">
 			<i class="fa fa-calendar"></i>
 			<h3>CALENDAR</h3>
-			<p><%= link_to 'ADD AVAILABILITY', new_meeting_path %></p>
-			
+			<p><%#= link_to 'ADD AVAILABILITY', new_meeting_path %></p>
+			<a data-toggle="modal" data-target="#myModal3" href="#myModal3">ADD AVAILABILITY</a>
+			<%= render 'new_meeting' %>
 			<%= render 'meetings' %>
 			
 		</div><!-- col-lg-4 -->
@@ -27,8 +28,9 @@
 			<i class="fa fa-dribbble"></i>
 			<h3>MY SPORTS</h3>
 			<!-- <p><a data-toggle="modal" data-target="#myModal" href="#myModal">ADD SPORT</a> -->
-			<p><%= link_to 'ADD SPORT', new_sport_path %></p>
-			
+			<p><%#= link_to 'ADD SPORT', new_sport_path %></p>
+			<a data-toggle="modal" data-target="#myModal2" href="#myModal2">ADD SPORT</a>
+			<%= render 'new_sport' %>
 			<%= render 'sports' %>
 			
 		</div><!-- col-lg-4 -->
@@ -36,7 +38,7 @@
 		<div class="col-lg-5">
 			<i class="fa fa-retweet"></i>
 			<h3>MATCHES</h3>
-			<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
+			
 		</div><!-- col-lg-4 --><br>
 	</div>
 </div>

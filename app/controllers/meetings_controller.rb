@@ -3,11 +3,8 @@ class MeetingsController < ApplicationController
   # GET /meetings.json
   def index
     @meetings = Meeting.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @meetings }
-    end
+    
+    #@meetings = current_user.meetings
   end
 
   # GET /meetings/1
@@ -38,6 +35,29 @@ class MeetingsController < ApplicationController
   def edit
     @meeting = Meeting.find(params[:id])
   end
+
+  def search
+  match
+  render :match
+  end
+
+  def match
+
+    if params[:search].present?
+      @meetings = Meeting.near(params[:search], 50, :order => :distance)
+      else
+      @meetings = Meeting.all
+    end
+  
+    # @meetings = current_user.meetings
+    # @search = Meeting.joins(:users).search(params[:q])
+    # @meetings = @search.result
+    # @meetings = @meetings.joins(:users)
+    # @search.build_condition if @search.conditions.empty?
+    # @search.build_sort if @search.sorts.empty?
+
+  end
+
 
   # POST /meetings
   # POST /meetings.json

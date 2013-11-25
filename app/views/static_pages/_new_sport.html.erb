@@ -1,0 +1,36 @@
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">Add A Sport</h4>
+          </div>
+          <div class="modal-body">
+              <div class="row centered">
+                <%= simple_form_for @sport do |f| %>
+        
+                  <div id="sln" class="field">
+                   <%#= f.collection_select :sport_id, @sports, :id, :name  %>
+                   <%= f.select :name, collection: ["Golf", "Tennis", "Squash", "Workout"]%><br>
+                  </div><br/>
+                  
+                  <div id="sln" class="field">
+                   <%#= f.select :rating, collection: ["Not Bad", "Average", "Good", "Great"]%><br>
+                  </div><br/>
+                  <div class="field">
+                    <%#= f.collection_select :user_id, @skill, :id, :newbie %>
+                      <%#= f.hidden_field :user_id, value: current_user.id %>
+                  
+                  </div>
+                  <div class="actions">
+                    <%= f.submit %>
+                  </div>
+                <% end %>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <!-- <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button> -->
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->

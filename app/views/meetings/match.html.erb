@@ -1,0 +1,32 @@
+<div class="contents"> 
+  <div class="container">
+    <div id="dg">
+     <%= form_tag meetings_path, :method => :get do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search Near", :name => nil %>
+  </p>
+<% end %>
+
+<table class="table table-bordered">
+  <tr>
+    <th>Address</th>
+    <th>Latitude</th>
+    <th>Longitude</th>
+  </tr>
+  <% for meeting in @meetings %>
+    <tr>
+      <td><%= meeting.address %></td>
+      <td><%= meeting.latitude %></td>
+      <td><%= meeting.longitude %></td>
+       <td><%= link_to 'Show', meeting %></td>
+    <td><%= link_to 'Edit', edit_meeting_path(meeting) %></td>
+    <td><%= link_to 'Destroy', meeting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+
+
+    </div>
+  </div>
+</div>

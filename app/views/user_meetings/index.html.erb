@@ -1,25 +1,34 @@
-<h1>Listing user_meetings</h1>
+<div class="contents"> 
+  <div class="container">
+    <h1>Listing user_meetings</h1>
 
-<table>
-  <tr>
-    <th>User</th>
-    <th>Meeting</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+    <table class="table table-bordered"> 
+      <tr>
+        <th>User</th>
+        <th>Sport</th>
+        <th>Date</th>
+        <th>Meet At</th>
+        <th>Duration</th>
+        <th>Address</th>
+        <th>Remove</th>
+      </tr>
 
-<% @user_meetings.each do |user_meeting| %>
-  <tr>
-    <td><%= user_meeting.user %></td>
-    <td><%= user_meeting.meeting %></td>
-    <td><%= link_to 'Show', user_meeting %></td>
-    <td><%= link_to 'Edit', edit_user_meeting_path(user_meeting) %></td>
-    <td><%= link_to 'Destroy', user_meeting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+    <% @user_meetings.each do |user_meeting| %>
+      <tr>
+        <td><%= user_meeting.user.first_name %></td>
+        <td><%= user_meeting.meeting.sport.name %></td>
+        <td><%= user_meeting.meeting.meetdate.try(:strftime, '%A  %B  %e')  %></td>
+        <td><%= user_meeting.meeting.start_at.strftime('%I : %M %P') %></td>
+        <td><%= distance_of_time_in_words user_meeting.meeting.start_at, user_meeting.meeting.end_at %></td>
+        <td><%= user_meeting.meeting.address %></td>
+        
+        <td><%= link_to 'Destroy', user_meeting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    </table>
 
-<br />
+    <br />
 
-<%= link_to 'New User meeting', new_user_meeting_path %>
+    <%= link_to 'New User meeting', new_user_meeting_path %>
+  </div>
+</div>

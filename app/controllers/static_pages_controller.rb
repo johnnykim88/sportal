@@ -9,7 +9,8 @@ class StaticPagesController < ApplicationController
   
   def dashboard
     
-  
+    @sport = Sport.new
+    @meeting = Meeting.new
     @sports = current_user.sports
     @meetings = current_user.meetings
     # @search = User.joins(:sports).search(params[:q])
@@ -20,6 +21,9 @@ class StaticPagesController < ApplicationController
    
   end
 
+  def match
+    @meetings = user_meeting
+  end
 
   def help
   end

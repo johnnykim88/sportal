@@ -1,0 +1,47 @@
+<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">Add Availability</h4>
+          </div>
+          <div class="modal-body">
+              <div class="row centered">
+                <%= simple_form_for @meeting, :html => { :class => 'form-horizontal' } do |f| %>
+                   <div class="form-group">
+                    <p style="margin-bottom:-3px;">Select Sport</p>
+                    <%= f.collection_select :sport_id, @sports, :id, :name  %>
+                  </div><br/>
+                  <div class="form-group">
+                    <%= f.label :meetdate %><br />
+                   <%= f.text_field :meetdate %>
+                  </div><br/>
+                   <div class="form-group">
+                    <%= f.label :address %><br />
+                    <%= f.text_field :address %>
+                  </div><br/>
+                   <div class="form-group">
+                      <%= f.label :start_at %><br />
+                      <%= f.select :start_at, collection: ["12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM"]%>
+                  </div><br/>
+                    <div class="form-group">
+                    <%= f.label :end_at %><br />
+                    <%= f.select :end_at, collection: ["12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM"]%>
+                  </div><br/>
+                 
+                   <div class="form-group">
+                    <%= f.label :recurring %><br />
+                    <%= f.check_box :recurring %>
+                  </div>
+                  <div class="actions">
+                    <%= f.submit %>
+                  </div>
+                <% end %>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <!-- <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button> -->
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
