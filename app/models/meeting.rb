@@ -4,4 +4,8 @@ class Meeting < ActiveRecord::Base
   belongs_to :sport
   has_many :user_meetings
   has_many :users, through: :user_meetings
+
+  geocoded_by :address
+  reverse_geocoded_by :latitude, :longitude
+  after_validation :geocode, :reverse_geocode
 end

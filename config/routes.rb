@@ -1,7 +1,7 @@
 Sportal::Application.routes.draw do
  
  
-  resources :users
+  resources :users, only: [:show, :edit, :update]
 
   resources :meetings
 
