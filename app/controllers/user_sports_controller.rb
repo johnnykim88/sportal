@@ -25,6 +25,7 @@ class UserSportsController < ApplicationController
   # GET /user_sports/new.json
   def new
     @user_sport = UserSport.new
+    @sport = Sport.all
 
     respond_to do |format|
       format.html # new.html.erb

@@ -1,25 +1,32 @@
-<h1>Listing user_sports</h1>
+<div class="contents"> 
+  <div class="container">
+    <div id="dg">
+      <h1>Listing Sports</h1>
 
-<table>
-  <tr>
-    <th>User</th>
-    <th>Sport</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+        <table class="table table-bordered">
 
-<% @user_sports.each do |user_sport| %>
-  <tr>
-    <td><%= user_sport.user %></td>
-    <td><%= user_sport.sport %></td>
-    <td><%= link_to 'Show', user_sport %></td>
-    <td><%= link_to 'Edit', edit_user_sport_path(user_sport) %></td>
-    <td><%= link_to 'Destroy', user_sport, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
 
-<br />
+          <tr>
+            <th>User</th>
+            <th>Sport</th>
+            <th>Rating</th>
+            <th></th>
+            
+          </tr>
 
-<%= link_to 'New User sport', new_user_sport_path %>
+            <% @user_sports.each do |user_sport| %>
+              <tr>
+                <td><%= user_sport.user.first_name %></td>
+                <td><%= user_sport.sport.name %></td>
+                <td><%= user_sport.rating %></td>
+                <td><%= link_to 'Destroy', user_sport, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+            <% end %>
+        </table>
+
+        <br />
+
+        <%= link_to 'New User sport', new_user_sport_path %>
+</div>
+</div>
+</div>

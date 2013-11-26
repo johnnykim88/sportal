@@ -10,6 +10,9 @@ class StaticPagesController < ApplicationController
   def dashboard
     
     @sport = Sport.new
+    @sport = Sport.all
+    @user_sport = UserSport.new
+    @user_sports = UserSport.all
     @meeting = Meeting.new
     @sports = current_user.sports
     @meetings = current_user.meetings

@@ -11,7 +11,8 @@ Sportal::Application.routes.draw do
 
 	  resources :user_meetings
 	  resources :meetings
-
+	  resources :user_sports
+	  
 
 	  resources :sports
 
