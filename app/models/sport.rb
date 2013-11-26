@@ -1,5 +1,5 @@
 class Sport < ActiveRecord::Base
-  attr_accessible :name, :meetings_attributes, :user_sports_attributes, :users_attributes
+  attr_accessible :name, :rating, :meetings_attributes, :user_sports_attributes, :users_attributes
 
 
   has_many :meetings

@@ -12,6 +12,7 @@
 	# Sport.create(name: 'Squash')
 	# Sport.create(name: 'Running')
 	# Sport.create(name: 'Workout')
+	# Sport.create(name: 'Basketball')
 
 
 	# Meeting.create(meetdate: '2013-12-2', start_at: '11:00 AM', end_at: '3:00 PM' )

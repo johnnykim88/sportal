@@ -18,14 +18,14 @@ class User < ActiveRecord::Base
   after_validation :geocode
 
   has_attached_file :photo, 
-  					:default_url => '/img/default.png',
+  					:default_url => '/assets/images/avatar/default.JPG',
             :styles => { :export => {:geometry => "50x550#", :quality => 100, :format => 'JPG'} },
   					:convert_options => { :all => "-quality 100" },
   					:processor => "mini_magick",
-  					:url  => "/assets/img/avatar/:basename.:extension",
+  					:url  => "/assets/images/avatar/:basename.:extension",
   					:path => ":rails_root/public/assets/images/avatar/:basename.:extension"
 
-
+scope :all_except_current, ->(user) { where.not(id: user.id) }
   
 
 

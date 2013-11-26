@@ -10,6 +10,16 @@
 </div>
 <div class="container w">
 	<div class="row centered">
+		<div class="col-lg-3"></div>
+		<div class="col-lg-6">
+			<i class="fa fa-dribbble"></i>
+			<h3>MY SPORTS</h3>
+			<a data-toggle="modal" data-target="#myModal2" href="#myModal2">ADD SPORT</a>
+			<%= render 'new_sport' %>
+			<%= render 'sports' %>
+		</div>
+	</div>
+	<div class="row centered">
 		<div class="col-lg-1"></div>
 		<div class="col-lg-10">
 			<i class="fa fa-calendar"></i>
@@ -19,27 +29,17 @@
 			<%= render 'new_meeting' %>
 			<%= render 'meetings' %>
 			
-		</div><!-- col-lg-4 -->
+		</div>
 		<div class="col-lg-1"></div>
 	</div>
 	<div class="row centered">
-		<br>
-		<div class="col-lg-5">
-			<i class="fa fa-dribbble"></i>
-			<h3>MY SPORTS</h3>
-			<!-- <p><a data-toggle="modal" data-target="#myModal" href="#myModal">ADD SPORT</a> -->
-			<p><%#= link_to 'ADD SPORT', new_sport_path %></p>
-			<a data-toggle="modal" data-target="#myModal2" href="#myModal2">ADD SPORT</a>
-			<%= render 'new_sport' %>
-			<%= render 'sports' %>
-			
-		</div><!-- col-lg-4 -->
-		<div class="col-lg-2"></div>
-		<div class="col-lg-5">
+		<div class="col-lg-1"></div>
+		<div class="col-lg-10">
 			<i class="fa fa-retweet"></i>
 			<h3>MATCHES</h3>
-			
+			<%= render 'matches' %>
 		</div><!-- col-lg-4 --><br>
+		<div class="col-lg-1"></div>
 	</div>
 </div>
 	<!-- PRICING SECTION -->

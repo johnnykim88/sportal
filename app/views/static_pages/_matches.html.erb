@@ -1,13 +1,32 @@
-<%= search_form_for @search, url: search_meetings_path, method: :post do |f| %>
-  <%= f.condition_fields do |c| %>
-    <%= render "condition_fields", f: c %>
-  <% end %>
-  <p><%= link_to_add_fields "Add Conditions", f, :condition %></p>
-  <div class="field">
-    Sort:
-    <%= f.sort_fields do |s| %>
-      <%= s.sort_select %>
+<table class="table table-bordered"> 
+      <tr>
+        <th>User</th>
+        
+        <th>Sport</th>
+       
+        <th>Date</th>
+        <th>Start At</th>
+        <th>End At</th>
+        
+        <th>Address</th>
+        <th>Show</th>
+       
+      </tr>
+    
+    <% @user_meetings.each do |user_meeting| %>
+      <tr>
+        <td><%= user_meeting.user.first_name %></td>
+        
+        <td><%= user_meeting.meeting.sport.name %></td>
+        
+        <td><%= user_meeting.meeting.meetdate.try(:strftime, '%A  %B  %e')  %></td>
+        <td><%= user_meeting.meeting.start_at.strftime('%I : %M %P') %></td>
+        <td><%= user_meeting.meeting.end_at.strftime('%I : %M %P') %></td>
+       
+        <td><%= user_meeting.meeting.address %></td>
+        <td><%= link_to 'Show', user_meeting %></td>
+        
+      </tr>
     <% end %>
-  </div>
-  <div class="actions"><%= f.submit "Search" %></div>
-<% end %>
+   
+    </table>

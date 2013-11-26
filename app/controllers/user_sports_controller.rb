@@ -41,18 +41,13 @@ class UserSportsController < ApplicationController
   # POST /user_sports
   # POST /user_sports.json
   def create
-    @user_sport = UserSport.new(params[:user_sport])
-
-    respond_to do |format|
-      if @user_sport.save
-        format.html { redirect_to @user_sport, notice: 'User sport was successfully created.' }
-        format.json { render json: @user_sport, status: :created, location: @user_sport }
+    @sport = current_user.sports.create(params[:sport])
+    
+if @sport.save
+        redirect_to dashboard_path
       else
-        format.html { render action: "new" }
-        format.json { render json: @user_sport.errors, status: :unprocessable_entity }
       end
     end
-  end
 
   # PUT /user_sports/1
   # PUT /user_sports/1.json

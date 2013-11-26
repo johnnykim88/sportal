@@ -1,15 +1,39 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>User:</b>
-  <%= @user_meeting.user %>
-</p>
-
-<p>
-  <b>Meeting:</b>
-  <%= @user_meeting.meeting %>
-</p>
-
-
-<%= link_to 'Edit', edit_user_meeting_path(@user_meeting) %> |
-<%= link_to 'Back', user_meetings_path %>
+<div class="contents"> 
+    <div class="container">	
+		<div style="padding-top:30px;" class="row">
+			
+			<div class="col-md-6 ">
+				<p id="notice"><%= notice %></p>
+				<p id="meetu">
+				    <b>User:</b>
+				    <%= @user_meeting.user.first_name %><%= @user_meeting.user.last_name %>
+				</p>
+				<p id="meetsport">
+				    <b>Sport:</b>
+				    <%= @user_meeting.meeting.sport.name %>
+				</p>
+				<p id ="meetskill">
+				    <b>Skill Level:</b>
+				    <%= @user_meeting.meeting.sport.rating %>
+				</p>
+				<p id ="meetwhen">
+				    <b>Availability:</b>
+				    <ul class ="meetshow">
+					  <li><%= @user_meeting.meeting.meetdate.try(:strftime, '%A  %B  %e')  %></li>
+		        	  <li><%= @user_meeting.meeting.start_at.strftime('%I : %M %P') %></li>
+		              <li><%= @user_meeting.meeting.end_at.strftime('%I : %M %P') %></li>
+				    </ul>
+				</p>
+			</div>
+			<div class="col-md-5">
+				<p>
+				    <b>Location:</b>
+				    <span id="address2"><%= @user_meeting.meeting.address %></span>
+				    <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@user_meeting.meeting.latitude}%2C#{@user_meeting.meeting.longitude}" %>
+				</p>
+				  <%= link_to 'Edit', edit_user_meeting_path(@user_meeting) %> |
+				  <%= link_to 'Back', user_meetings_path %>
+		    </div>
+		</div>
+	</div>
+</div>

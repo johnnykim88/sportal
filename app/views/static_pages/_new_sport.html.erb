@@ -6,19 +6,26 @@
             <h4 class="modal-title" id="myModalLabel">Add A Sport</h4>
           </div>
           <div class="modal-body">
-            <%= form_for(@user_sport) do |f| %>
+           
+          <%= simple_form_for @sport do |f| %>
         
-        <div class="field">
-          <%= f.collection_select :sport_id, @sport, :id, :name  %>
-        </div><br/>
-        <div class="field">
-          <%= f.select :rating, collection: ["Beginner", "Intermediate", "Advanced", "Professional"]%>
-        </div><br>
-        
-        <div class="actions">
-          <%= f.submit %>
-        </div>
-      <% end %>
+                  <div id="sln" class="field">
+                   <%#= f.collection_select :sport_id, @sports, :id, :name  %>
+                   <%= f.select :name, collection: ["Basketball", "Golf", "Tennis", "Squash", "Workout"]%><br>
+                  </div><br/>
+                  
+                  <div id="sln" class="field">
+                   <%= f.select :rating, collection: ["Beginner", "Intermediate", "Advanced", "Expert", "World-Class"]%><br>
+                  </div><br/>
+                  <div class="field">
+                    <%#= f.collection_select :user_id, @skill, :id, :newbie %>
+                      <%#= f.hidden_field :user_id, value: current_user.id %>
+                  
+                  </div>
+                  <div class="actions">
+                    <%= f.submit %>
+                  </div>
+                <% end %>
            
           </div>
           <div class="modal-footer">
