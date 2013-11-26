@@ -18,10 +18,11 @@ class User < ActiveRecord::Base
   after_validation :geocode
 
   has_attached_file :photo, 
-  					:styles => { :export => {:geometry => "50x550#", :quality => 100, :format => 'JPG'} },
+  					:default_url => '/img/default.png',
+            :styles => { :export => {:geometry => "50x550#", :quality => 100, :format => 'JPG'} },
   					:convert_options => { :all => "-quality 100" },
   					:processor => "mini_magick",
-  					:url  => "/assets/images/avatar/:basename.:extension",
+  					:url  => "/assets/img/avatar/:basename.:extension",
   					:path => ":rails_root/public/assets/images/avatar/:basename.:extension"
 
 

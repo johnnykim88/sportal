@@ -114,3 +114,10 @@
 .open > .bfh-timepicker-popover {
   display: block;
 }
+
+
+#propic img{
+  border:3px solid white;
+  height:200px;
+  width:160px;
+}
