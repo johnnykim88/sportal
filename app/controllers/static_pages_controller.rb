@@ -9,18 +9,18 @@ class StaticPagesController < ApplicationController
   
   def dashboard
     
-    @sport = Sport.new
+    @user_sport = UserSport.new
+    @user_sports = current_user.user_sports
+    @sport = Sport.all
     @sports = current_user.sports
     @meeting = Meeting.new
-    @meetings = current_user.meetings
-    @user_meetings = UserMeeting.all 
-    # @user_sport = UserSport.new
-    # @user_sports = UserSport.all
-    # @search = User.joins(:sports).search(params[:q])
-    # @users = @search.result
-    # @users = @contents.joins(:sports)
-    # @search.build_condition if @search.conditions.empty?
-    # @search.build_sort if @search.sorts.empty?
+    @mymeetings = current_user.meetings
+    @user_meetings = UserMeeting.all
+    
+    @meetings = UserMeeting.all
+    
+    
+      
   end
 
   def match

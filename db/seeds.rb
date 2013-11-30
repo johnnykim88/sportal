@@ -14,9 +14,8 @@
 	# Sport.create(name: 'Workout')
 	# Sport.create(name: 'Basketball')
 
+["Basketball", "Golf", "Tennis", "Squash", "Workout", "Running"].each do |sport|
+	Sport.find_or_create_by_name(sport)
+end
 
-	# Meeting.create(meetdate: '2013-12-2', start_at: '11:00 AM', end_at: '3:00 PM' )
-	# Meeting.create(meetdate: '2013-12-2', start_at: '11:00 AM', end_at: '3:00 PM' )
-	# Meeting.create(meetdate: '2013-12-2', start_at: '11:00 AM', end_at: '3:00 PM' )
-	# Meeting.create(meetdate: '2013-12-2', start_at: '11:00 AM', end_at: '3:00 PM' )
-	# Meeting.create(meetdate: '2013-12-2', start_at: '11:00 AM', end_at: '3:00 PM' )
+	

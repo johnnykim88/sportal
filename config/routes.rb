@@ -23,6 +23,7 @@ Sportal::Application.routes.draw do
 
 		match '/match', to: 'meetings#match' 
 		match '/list', to: 'users#list' 
-		match '/dashboard', to: 'static_pages#dashboard' 
+		match '/dashboard', to: 'user#dashboard', as: "user_root"
 		match '/search', to: 'meetings#search'
+		match '/profile/:id', to: 'user#show', as: "profile"
 end

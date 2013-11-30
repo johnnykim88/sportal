@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :remember_me, :photo, :zip, :latitude, :longitude, :sports_attributes
   # attr_accessible :title, :body
 
+
   has_many :user_sports
   has_many :user_meetings
   has_many :sports, through: :user_sports
@@ -25,7 +26,7 @@ class User < ActiveRecord::Base
   					:url  => "/assets/images/avatar/:basename.:extension",
   					:path => ":rails_root/public/assets/images/avatar/:basename.:extension"
 
-scope :all_except_current, ->(user) { where.not(id: user.id) }
+# scope :all_except_current, ->(user) { where.not(id: user.id) }
   
 
 

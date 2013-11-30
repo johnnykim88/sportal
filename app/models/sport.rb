@@ -1,6 +1,12 @@
 class Sport < ActiveRecord::Base
-  attr_accessible :name, :rating, :meetings_attributes, :user_sports_attributes, :users_attributes
+  
+attr_accessible :name,  :meetings_attributes, :user_sports_attributes, :users_attributes
 
+# scope :sport_match, equal_to(?)
+
+#   def self.equal_to(name)
+#   	where("name == ?", name)
+#   end
 
   has_many :meetings
   has_many :user_sports
@@ -9,11 +15,5 @@ class Sport < ActiveRecord::Base
   accepts_nested_attributes_for :user_sports
 
   
-  # def self.equal_to(name)
-  # 	where("sports.name = ?", name)
-  # end
-
-  # scope :match, equal_to(name)
-
 
 end

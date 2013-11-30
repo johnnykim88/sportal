@@ -30,13 +30,16 @@ group :assets do
 end
   
   gem 'omniauth-facebook'
- 
+  gem 'enumerize'
+  gem 'acts-as-taggable-on'
+  gem "arel"
+  gem 'has_scope'
   gem 'jbuilder'
   gem "appointments"
   gem 'bootstrap_forms'
   gem 'devise'
   
-  
+  gem 'squeel'
   gem 'simple_form'
   gem 'paperclip'
   gem 'newrelic_rpm'

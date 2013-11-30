@@ -24,6 +24,7 @@ class MeetingsController < ApplicationController
     @meeting = Meeting.new
     
     @sports = current_user.sports  
+    @users = User.find(params[:id])
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,13 +42,13 @@ class MeetingsController < ApplicationController
   render :match
   end
 
-  def match
+  # def match
 
-    if params[:search].present?
-      @meetings = Meeting.near(params[:search], 50, :order => :distance)
-      else
-      @meetings = Meeting.all
-    end
+  #   if params[:search].present?
+  #     @meetings = Meeting.near(params[:search], 50, :order => :distance)
+  #     else
+  #     @meetings = Meeting.all
+  #   end
   
     # @meetings = current_user.meetings
     # @search = Meeting.joins(:users).search(params[:q])
@@ -56,16 +57,16 @@ class MeetingsController < ApplicationController
     # @search.build_condition if @search.conditions.empty?
     # @search.build_sort if @search.sorts.empty?
 
-  end
+  # end
 
 
   # POST /meetings
   # POST /meetings.json
   def create
-    @meeting = Meeting.new(params[:meeting])
+    # @meeting = Meeting.new(params[:meeting])
     @meeting = current_user.meetings.create(params[:meeting])
       if @meeting.save
-          redirect_to dashboard_path
+          redirect_to user_root_path
         else
       end
   end

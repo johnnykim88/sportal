@@ -1,0 +1,15 @@
+<div style="padding-top:80px;padding-bottom:240px;" id="headerwrap">
+   <div id="rcbg" class="row centered">
+      <p id="propic"><%= image_tag @user.photo.url(:photo) %></p>
+
+      <p>
+      <b>Name</b>
+      <%= @user.first_name %> <%= @user.last_name %>
+      </p>
+      <p>
+        <b>Sports</b>
+  
+      </p>
+    <%= link_to 'Back', user_root_path %>
+  </div>
+</div>

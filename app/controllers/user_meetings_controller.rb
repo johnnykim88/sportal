@@ -2,8 +2,9 @@ class UserMeetingsController < ApplicationController
   # GET /user_meetings
   # GET /user_meetings.json
   def index
-    @user_meetings = UserMeeting.all
-
+    
+    @user_meetings = UserMeeting.where(true)
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @user_meetings }

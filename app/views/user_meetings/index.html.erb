@@ -7,14 +7,14 @@
         <th>User</th>
         <th>Zip</th>
         <th>Sport</th>
-        <th>Rating</th>
         <th>Date</th>
         <th>Start At</th>
         <th>End At</th>
         <th>Duration</th>
         <th>Address</th>
         <th>Show</th>
-        <th>Remove</th>
+        <th>Destroy</th>
+        
       </tr>
 
     <% @user_meetings.each do |user_meeting| %>
@@ -22,7 +22,7 @@
         <td><%= user_meeting.user.first_name %></td>
         <td><%= user_meeting.user.zip %></td>
         <td><%= user_meeting.meeting.sport.name %></td>
-        <td><%= user_meeting.meeting.sport.rating %></td>
+        
         <td><%= user_meeting.meeting.meetdate.try(:strftime, '%A  %B  %e')  %></td>
         <td><%= user_meeting.meeting.start_at.strftime('%I : %M %P') %></td>
         <td><%= user_meeting.meeting.end_at.strftime('%I : %M %P') %></td>

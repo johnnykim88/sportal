@@ -1,0 +1,16 @@
+<fieldset>
+  <%= f.select :rating, collection: ["Beginner", "Intermediate", "Advanced", "Expert", "World-Class"]%>
+  <%= f.hidden_field :_destroy %>
+  <%= link_to "Remove Skill Level", '#', class: "remove_fields" %><br/>
+</fieldset>
+
+<div id="sln" class="field">
+                  
+                  <%= f.fields_for :user_sports do |builder| %>
+                    <%= render 'user_sport_fields', f: builder %>
+                  <% end %><br>
+                  <%= link_to_add_fields "Add Skill Level", f, :user_sports %>
+
+
+                   <%#= f.select :rating, collection: ["Beginner", "Intermediate", "Advanced", "Expert", "World-Class"]%><br>
+                  </div><br/>

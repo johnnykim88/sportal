@@ -35,15 +35,18 @@ class UserSportsController < ApplicationController
 
   # GET /user_sports/1/edit
   def edit
+    @sports = Sport.all
     @user_sport = UserSport.find(params[:id])
+    # @user_sportSports = @user_sport.sports
+    # @allocations = Allocation.where("user_sport_id =?", @user_sport)
   end
 
   # POST /user_sports
   # POST /user_sports.json
   def create
-    @sport = current_user.sports.create(params[:sport])
+    @user_sport = current_user.user_sports.create(params[:user_sport])
     
-if @sport.save
+if @user_sport.save
         redirect_to dashboard_path
       else
       end
@@ -53,6 +56,8 @@ if @sport.save
   # PUT /user_sports/1.json
   def update
     @user_sport = UserSport.find(params[:id])
+    # sport = Sport.find(params[:sport_id])
+    # @user_sport.allocate!(sport)
 
     respond_to do |format|
       if @user_sport.update_attributes(params[:user_sport])
