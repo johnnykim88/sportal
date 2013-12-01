@@ -81,6 +81,8 @@ glyphicons-halflings-regular.woff: glyphicons-halflings-regular-0391150c52d1f658
 glyphicons-halflings-regular/index.woff: glyphicons-halflings-regular-0391150c52d1f65893d1d6b0d29fd0c9.woff
 bballbg.png: bballbg-9133e56f643bcf69017b3e3a61b867aa.png
 bballbg/index.png: bballbg-9133e56f643bcf69017b3e3a61b867aa.png
+default.png: default-c412d9c43636016aaa4e754262a99f21.png
+default/index.png: default-c412d9c43636016aaa4e754262a99f21.png
 fb.png: fb-be625360d7102fb56308f883820b9fac.png
 fb/index.png: fb-be625360d7102fb56308f883820b9fac.png
 go.png: go-ce465a9d669c72e0aafff45334e5c237.png
@@ -103,10 +105,10 @@ rss.png: rss-1de23f092b4f93adf1d17bc1710ae08b.png
 rss/index.png: rss-1de23f092b4f93adf1d17bc1710ae08b.png
 tw.png: tw-88bbd0812e2f61d3986ab7048ee5eeed.png
 tw/index.png: tw-88bbd0812e2f61d3986ab7048ee5eeed.png
-application.js: application-a541bfd9bf8be3534d8c2b72fcbc89b2.js
-application/index.js: application-a541bfd9bf8be3534d8c2b72fcbc89b2.js
-application.css: application-6035dc530b5549d3f7b2acdcc652a851.css
-application/index.css: application-6035dc530b5549d3f7b2acdcc652a851.css
+application.js: application-eaae68bcba03ce9eedf0429338c6ebbb.js
+application/index.js: application-eaae68bcba03ce9eedf0429338c6ebbb.js
+application.css: application-c0d3479ef77f6bc3668607268ae81094.css
+application/index.css: application-c0d3479ef77f6bc3668607268ae81094.css
 jquery-ui/animated-overlay.gif: jquery-ui/animated-overlay-602eee4c79a4796b02bb6442948c9e28.gif
 jquery-ui/animated-overlay/index.gif: jquery-ui/animated-overlay-602eee4c79a4796b02bb6442948c9e28.gif
 jquery-ui/ui-bg_flat_0_aaaaaa_40x100.png: jquery-ui/ui-bg_flat_0_aaaaaa_40x100-7d1197a52442bc56fcad60d0390f4b32.png

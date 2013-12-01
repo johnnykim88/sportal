@@ -1,34 +1,28 @@
-<% x = 0 %>
-<div class="col-lg-12">
-    <table class="table table-bordered"> 
-      <tr>
-        <th>Sport</th>
-        <th>Date</th>
-        <th>Start Time</th>
-        <th>Time Frame</th>
-        <th>Location</th>
-        <th>Matches</th>
-      </tr>
-     
-        
-        <tr>
-         <% @mymeetings.each do |mymeeting| %> 
-          
-          <td><%= mymeeting.sport.name unless nil? %></td>
-          <td><%= mymeeting.meetdate.try(:strftime, '%A  %B  %e')  %></td>
-          <td><%= mymeeting.start_at.strftime('%I : %M %P') %></td>
-          <td><%= distance_of_time_in_words mymeeting.start_at, mymeeting.end_at %></td>
-          <td><%= mymeeting.address %></td>
-          <td>
-            <%= form_for user_root_path, method: :get do |f| %>
-              <%= f.hidden_field :id, :value => mymeeting.id %>
-              <button type="submit">Matches</button>
-              <%end%>
-          </td>
-        </tr>
+<div class="row">     
     
+    <ul id="thetime">
+      <%# @mymeetings.in_groups_of(2, false) do |mymeeting| %> 
+        <% @mymeetings.each do |mymeeting| %> 
+         <!-- <div class="col-lg-4"></div> -->   
+          <div   id="mytime"> 
+            <li><%= mymeeting.sport.name unless nil? %></li>
+            <li><%= mymeeting.meetdate.try(:strftime, '%A  %B  %e')  %></li>
+            <li><%= mymeeting.start_at.strftime('%I : %M %P') %></li>
+            <li><%= distance_of_time_in_words mymeeting.start_at, mymeeting.end_at %></li>
+            <li>Location<%#= mymeeting.address %></li>
+            <li>
+              <%= form_for user_root_path,   :html => { :id => "mymatch" }  do  |f| %>
+                <%= f.hidden_field :id, :value => mymeeting.id %>
+                <button  id="matchit" type="submit" return="false">Matches</button>
+              <%end%>
+            </li>
+          </div>
+        <!-- <div class="col-lg-4"></div>  --> 
+        <%#end%>
       <%end%>
     
-    </table>
+    </ul>
+  
+  
 </div>
-
+   

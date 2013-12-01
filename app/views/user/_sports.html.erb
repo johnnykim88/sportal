@@ -10,8 +10,8 @@
     <tr>
       <td><%= user_sport.sport.name %></td>
        <td><%= user_sport.rating %></td>
-      <td><%= link_to 'Edit', edit_user_sport_path(user_sport) %></td>
-      <td><%= link_to 'Destroy', user_sport, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= link_to 'Change', edit_user_sport_path(user_sport) %></td>
+      <td><%= link_to 'Remove', user_sport, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
 

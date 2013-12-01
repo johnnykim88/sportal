@@ -34,14 +34,76 @@
 
 .beta{
   color:#ff7878;
+  font-size:14px;
   font-style:italic;
-  margin:0px 0px 0px 130px;
+  margin:0px 0px 0px 5px;
 }
 
 #logo{
 
-  margin-top:-30px;
+  margin-top:0px;
 }
+
+
+/*HOME PAGE**********************/
+
+#regbut1{
+
+  margin-top:25px;
+}
+
+/*DASHBoARD**********************/
+
+th{
+
+  text-align:center;
+}
+
+
+#mytime{
+
+  background:grey;
+  color:white;
+  border:1px solid black;
+  float:left;
+  padding:20px 30px 20px 30px;
+  margin-right:25px;
+  margin-bottom:25px;
+}
+
+#thetime{
+
+  
+  list-style:none;
+  margin-bottom:10px;
+}
+
+#matchit{
+
+  margin-top:10px;
+}
+
+
+#mytime2{
+
+  background:blue;
+  color:white;
+  border:1px solid black;
+  float:left;
+  padding:20px 30px 20px 30px;
+  margin-right:25px;
+  margin-bottom:25px;
+}
+
+#thetime2{
+
+  
+  list-style:none;
+  margin-bottom:10px;
+}
+
+
+
 
 /*SPORTS NEW EDIT**************************/
 
@@ -55,65 +117,7 @@
 
 }
 
-/*TIME PICKER************************/
 
-
-.bfh-timepicker-popover {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  z-index: 1000;
-  display: none;
-  float: left;
-  min-width: 100px;
-  background-color: #ffffff;
-  border: 1px solid #cccccc;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
-  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-  background-clip: padding-box;
-}
-
-.bfh-timepicker-popover > table {
-  width: 180px;
-  margin: 0;
-}
-
-.bfh-timepicker-popover > table > tbody > tr > td {
-  text-align: center;
-  border: 0;
-}
-
-.bfh-timepicker-popover > table > tbody > tr > td.separator {
-  font-size: 20px;
-  font-weight: bold;
-  line-height: 65px;
-}
-
-.bfh-timepicker-popover > table > tbody > tr > td > input {
-  width: 60px;
-  margin: 0;
-  text-align: center;
-  cursor: default;
-}
-
-.bfh-timepicker {
-  position: relative;
-}
-
-.bfh-timepicker-toggle {
-  *margin-bottom: -3px;
-}
-
-.bfh-timepicker-toggle > input[readonly] {
-  cursor: inherit;
-  background-color: inherit;
-}
-
-.open > .bfh-timepicker-popover {
-  display: block;
-}
 
 
 #propic img{
