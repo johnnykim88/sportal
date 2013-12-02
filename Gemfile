@@ -21,6 +21,7 @@ end
 group :assets do
   gem 'sass-rails'
   gem 'bootstrap-sass'
+  gem 'bootstrap_forms'
   gem 'coffee-rails'
   gem 'uglifier', '>= 1.0.3'
   gem 'font-awesome-sass'
@@ -30,16 +31,15 @@ group :assets do
 end
   
   gem 'omniauth-facebook'
-  gem 'enumerize'
   gem 'acts-as-taggable-on'
   gem "arel"
-  gem 'has_scope'
+ 
   gem 'jbuilder'
   gem "appointments"
-  gem 'bootstrap_forms'
+  
   gem 'devise'
   
-  gem 'squeel'
+  
   gem 'simple_form'
   gem 'paperclip'
   gem 'newrelic_rpm'
@@ -49,4 +49,5 @@ end
   gem "calendar_helper"
  
   gem "mini_magick", :git => "git://github.com/minimagick/minimagick.git"
+  
   ruby '2.0.0'

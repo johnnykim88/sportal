@@ -60,9 +60,9 @@ th{
 }
 
 
-#mytime{
+.mytime{
 
-  background:grey;
+  background-color:grey;
   color:white;
   border:1px solid black;
   float:left;
@@ -70,6 +70,15 @@ th{
   margin-right:25px;
   margin-bottom:25px;
 }
+
+
+.mytime:hover, #selected_mytime, .QuickStartLong:hover {
+    background: blue;
+    color:grey;
+    font-weight:bold;
+    
+}
+
 
 #thetime{
 
@@ -94,6 +103,13 @@ th{
   margin-right:25px;
   margin-bottom:25px;
 }
+
+#mytime2:hover {
+    background: blue;
+    color:grey;
+    font-weight:bold;
+}
+
 
 #thetime2{
 
@@ -124,4 +140,10 @@ th{
   border:3px solid white;
   height:220px;
   width:180px;
+}
+
+
+#invitez{
+
+  margin-top:10px;
 }

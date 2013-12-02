@@ -26,7 +26,7 @@ class User < ActiveRecord::Base
   					:url  => "/assets/images/avatar/:basename.:extension",
   					:path => ":rails_root/public/assets/images/avatar/:basename.:extension"
 
-# scope :all_except_current, ->(user) { where.not(id: user.id) }
+
   
 
 

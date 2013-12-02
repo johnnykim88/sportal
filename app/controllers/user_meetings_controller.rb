@@ -3,7 +3,7 @@ class UserMeetingsController < ApplicationController
   # GET /user_meetings.json
   def index
     
-    @user_meetings = UserMeeting.where(true)
+    @user_meetings = UserMeeting.all
     
     respond_to do |format|
       format.html # index.html.erb
@@ -76,9 +76,6 @@ class UserMeetingsController < ApplicationController
     @user_meeting = UserMeeting.find(params[:id])
     @user_meeting.destroy
 
-    respond_to do |format|
-      format.html { redirect_to user_meetings_url }
-      format.json { head :no_content }
-    end
+   
   end
 end

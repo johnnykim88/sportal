@@ -1,10 +1,10 @@
-<div class="row">     
-    
+<div class="step_wrapper">
+  <div class="row">     
     <ul id="thetime">
       <%# @mymeetings.in_groups_of(2, false) do |mymeeting| %> 
         <% @mymeetings.each do |mymeeting| %> 
          <!-- <div class="col-lg-4"></div> -->   
-          <div   id="mytime"> 
+          <div class="mytime" > 
             <li><%= mymeeting.sport.name unless nil? %></li>
             <li><%= mymeeting.meetdate.try(:strftime, '%A  %B  %e')  %></li>
             <li><%= mymeeting.start_at.strftime('%I : %M %P') %></li>
@@ -13,16 +13,14 @@
             <li>
               <%= form_for user_root_path,   :html => { :id => "mymatch" }  do  |f| %>
                 <%= f.hidden_field :id, :value => mymeeting.id %>
-                <button  id="matchit" type="submit" return="false">Matches</button>
+                <button  id="matchit" type="submit" return="false">Get Matches</button>
               <%end%>
             </li>
           </div>
         <!-- <div class="col-lg-4"></div>  --> 
         <%#end%>
       <%end%>
-    
     </ul>
-  
-  
+  </div>
 </div>
-   
+

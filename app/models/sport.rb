@@ -2,11 +2,7 @@ class Sport < ActiveRecord::Base
   
 attr_accessible :name,  :meetings_attributes, :user_sports_attributes, :users_attributes
 
-# scope :sport_match, equal_to(?)
 
-#   def self.equal_to(name)
-#   	where("name == ?", name)
-#   end
 
   has_many :meetings
   has_many :user_sports

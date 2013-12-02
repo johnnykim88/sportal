@@ -1,29 +1,30 @@
 
-
-<div class="col-lg-8 col-lg-offset-3 col-sm-12">
-      <ul id="thetime2">   
-        <% unless @matchmeetings.nil? %>
-          <% @matchmeetings.each do |meeting|  %>
-            <%unless meeting.user_meetings.first.user == current_user %>
-              <div   id="mytime2"> 
-                <li><%= link_to meeting.user_meetings.first.user.first_name, profile_path(meeting.user_meetings.first.user.id)  %></li>
-                <li><%= meeting.sport.name unless nil? %></li>
-                <li><%= meeting.meetdate.try(:strftime, '%A  %B  %e')  %></li>
-                <li><%= meeting.start_at.strftime('%I : %M %P') %></li>
-                <li><%= distance_of_time_in_words meeting.start_at, meeting.end_at %></li>
-                <li><%#= meeting.address %></li>
-                <li>
-                  <%= form_for user_root_path,   :html => { :id => "myinvite" }  do  |f| %>
-                  <%= f.hidden_field :id, :value => meeting.id %>
-                  <button  id="invitez" type="submit" return="false">Invite</button>
-                <%end%>
-                </li>
-              </div>
-             
+  <div class="col-lg-8 col-lg-offset-3 col-sm-12">
+        <ul id="thetime2">   
+          <% unless @matchmeetings.nil? %>
+            <% @matchmeetings.each do |meeting|  %>
+              <%unless meeting.user_meetings.first.user == current_user %>
+                <div   id="mytime2"> 
+                  <li><%= link_to meeting.user_meetings.first.user.first_name, profile_path(meeting.user_meetings.first.user.id)  %></li>
+                  <li><%= meeting.sport.name unless nil? %></li>
+                  <li><%= meeting.meetdate.try(:strftime, '%A  %B  %e')  %></li>
+                  <li><%= meeting.start_at.strftime('%I : %M %P') %></li>
+                  <li><%= distance_of_time_in_words meeting.start_at, meeting.end_at %></li>
+                  <li><%#= meeting.address %></li>
+                  <li>
+                    <%= form_for user_root_path,   :html => { :id => "myinvite" }  do  |f| %>
+                    <%= f.hidden_field :id, :value => meeting.id %>
+                    <button  id="invitez" type="submit" return="false">Invite</button>
+                  <%end%>
+                  </li>
+                </div>
+               
+              <%end%>
             <%end%>
           <%end%>
-        <%end%>
-      </ul>
-    </div>
+        </ul>
+      </div>
+    
+
     
  
