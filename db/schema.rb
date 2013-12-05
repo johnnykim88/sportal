@@ -11,7 +11,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131201065922) do
+ActiveRecord::Schema.define(:version => 20131205211939) do
+
+  create_table "locations", :force => true do |t|
+    t.string   "address"
+    t.string   "location_name"
+    t.string   "phone_number"
+    t.string   "district"
+    t.string   "city"
+    t.string   "postcode"
+    t.string   "country"
+    t.decimal  "lat"
+    t.decimal  "lng"
+    t.integer  "meeting_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.string   "state"
+  end
+
+  add_index "locations", ["meeting_id"], :name => "index_locations_on_meeting_id"
 
   create_table "meetings", :force => true do |t|
     t.date     "meetdate"

@@ -14,6 +14,7 @@ class UserController < ApplicationController
 	    @user_meetings = UserMeeting.all
 	    @meetings = UserMeeting.all
 	  	@matchmeetings = get_match
+	  	@location = Location.new
 	  	# raise
     end
 

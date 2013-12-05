@@ -1,5 +1,8 @@
 Sportal::Application.routes.draw do
  
+  resources :locations
+
+
 	resources :meetings do
 	     collection do
 	      match 'search' => 'meetings#search', via: [:get, :post], as: :search
