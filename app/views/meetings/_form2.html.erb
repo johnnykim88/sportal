@@ -1,0 +1,62 @@
+<div class="row centered">
+  <%= simple_form_for @meeting, :html => { :class => 'form-horizontal' } do |f| %>
+    <div class="form-group">
+      <p style="margin-bottom:-3px;">Select Sport</p>
+      <%= f.collection_select :sport_id, @sports, :id, :name  %>
+    </div><br/>
+    <div class="form-group">
+      <%= f.label :meetdate %><br />
+      <%= f.text_field :meetdate %>
+    </div><br/>
+    <div class="form-group">            
+      <%= f.label :start_at %><br />
+      <%= f.select :start_at, collection: ["12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM" ,"6:00 PM", "7:00 PM", "8:00 PM", "9:00 PM", "10:00 PM", "11:00 PM", "12:00 AM", "1:00 AM", "2:00 AM", "3:00 AM", "4:00 AM", "5:00 AM" ,"6:00 AM", "7:00 AM", "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM" ]%>
+    </div><br/>
+    <div class="form-group">
+      <%= f.label :end_at %><br />
+      <%= f.select :end_at, collection: ["12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM" ,"6:00 PM", "7:00 PM", "8:00 PM", "9:00 PM", "10:00 PM", "11:00 PM", "12:00 AM", "1:00 AM", "2:00 AM", "3:00 AM", "4:00 AM", "5:00 AM" ,"6:00 AM", "7:00 AM", "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM" ]%>
+    </div><br/>              
+    <div class="form-group">
+      <%= f.label :location_name %><br />
+      <%= f.text_field :location_name %>
+    </div>
+    <div class="form-group">
+      <%= f.label :postalcode %><br />
+      <%= f.text_field :postalcode %>
+    </div>
+    
+    <div class="form-group">
+      <%= f.label :address %><br />
+      <%= f.text_field :address %>
+    </div>
+    <div class="form-group">
+      <%= f.text_field :lat %>
+      <%= f.text_field :lng %>
+    </div><br/>
+   
+  <!--  <div class="form-group">
+          <%#= f.label :recurring %><br />
+          <%#= f.check_box :recurring %>
+        </div> -->
+    <div class="actions">
+      <%= f.submit %>
+    </div><br/>
+  
+   <div class="control-group">
+    
+      <%= label_tag :search, "Search For Address" %><br/>
+      <%= text_field_tag :meeting_search,  nil, class: "col-lg-6 search-query", type: "search" %><br/>
+    </div> <br/>
+ <%= render  'googlemap' %>
+  <% end %>
+</div>
+          
+     <div id="map-canvas"></div>
+    
+          
+
+   
+   
+    
+      
+</div> 

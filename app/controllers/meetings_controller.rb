@@ -24,7 +24,7 @@ class MeetingsController < ApplicationController
     @meeting = Meeting.new
     
     @sports = current_user.sports  
-    @users = User.find(params[:id])
+    
 
     respond_to do |format|
       format.html # new.html.erb

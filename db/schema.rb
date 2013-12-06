@@ -11,25 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131205211939) do
+ActiveRecord::Schema.define(:version => 20131206154628) do
 
-  create_table "locations", :force => true do |t|
-    t.string   "address"
-    t.string   "location_name"
-    t.string   "phone_number"
-    t.string   "district"
-    t.string   "city"
-    t.string   "postcode"
-    t.string   "country"
-    t.decimal  "lat"
-    t.decimal  "lng"
+  create_table "meeting_locations", :force => true do |t|
     t.integer  "meeting_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-    t.string   "state"
+    t.integer  "location_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
-  add_index "locations", ["meeting_id"], :name => "index_locations_on_meeting_id"
+  add_index "meeting_locations", ["location_id"], :name => "index_meeting_locations_on_location_id"
+  add_index "meeting_locations", ["meeting_id"], :name => "index_meeting_locations_on_meeting_id"
 
   create_table "meetings", :force => true do |t|
     t.date     "meetdate"
@@ -39,9 +31,17 @@ ActiveRecord::Schema.define(:version => 20131205211939) do
     t.float    "longitude"
     t.time     "start_at"
     t.time     "end_at"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
     t.integer  "sport_id"
+    t.string   "city"
+    t.string   "location_name"
+    t.string   "postalcode"
+    t.string   "phone_number"
+    t.string   "district"
+    t.string   "country"
+    t.decimal  "lat"
+    t.decimal  "lng"
   end
 
   create_table "messages", :force => true do |t|
