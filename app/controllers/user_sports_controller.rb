@@ -47,7 +47,7 @@ class UserSportsController < ApplicationController
     @user_sport = current_user.user_sports.create(params[:user_sport])
     
 if @user_sport.save
-        redirect_to dashboard_path
+        redirect_to new_location_path
       else
       end
     end

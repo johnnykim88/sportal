@@ -9,13 +9,7 @@ module ApplicationHelper
 	    link_to(name, '#', class: "add_fields", data: {id: id, fields: fields.gsub("\n", "")})
   end
 	
-	def active_for(str="")
-    if action_name == str
-      "active"
-    else
-      ""
-    end
-  end
+	
 
 
 end

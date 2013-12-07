@@ -3,5 +3,6 @@ class UserMeeting < ActiveRecord::Base
   belongs_to :user
   belongs_to :meeting
 
-  
+  # validates "meeting.starts_at" , "current_user.meeting.ends_at", :overlap => true
+  # validates "current_user.meeting.starts_at" , "meeting.ends_at", :overlap => true
 end

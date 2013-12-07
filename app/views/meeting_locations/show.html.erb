@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Meeting:</b>
+  <%= @meeting_location.meeting %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @meeting_location.location %>
+</p>
+
+
+<%= link_to 'Edit', edit_meeting_location_path(@meeting_location) %> |
+<%= link_to 'Back', meeting_locations_path %>

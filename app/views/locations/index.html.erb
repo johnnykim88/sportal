@@ -1,0 +1,37 @@
+<div class="contents"> 
+  <div class="container">
+    <div id="dg">
+      <h1>Locations</h1>
+      <table class="table table-bordered">
+        <tr>
+          <th>Address</th>
+          
+          <th>City</th>
+          <th>State</th>
+          <th>Zip Code</th>
+          
+          <th>Lat</th>
+          <th>Lng</th>
+          <th>Date</th>
+        </tr>
+
+          <% @locations.each do |location| %>
+            <tr>
+              <td><%= link_to location.country, location %> <%= link_to location.address, location %></td>
+              
+              <td><%= location.district%></td>
+              <td><%= location.city%></td>
+              <td><%= location.postcode %></td>
+              <td><%= location.lat %></td>
+              <td><%= location.lng %></td>
+              <td><%= location.created_at.to_s(:short) %></td>
+            </tr>
+          <% end %>
+      </table>
+
+      <br />
+      <%= link_to 'New Location', new_location_path %>
+      <br />
+    </div>
+  </div>
+</div>

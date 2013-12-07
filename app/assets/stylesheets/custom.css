@@ -147,3 +147,74 @@ th{
 
   margin-top:10px;
 }
+
+/*Google Maps*/
+
+#googlemap {
+  border: 1px dashed #999;
+  margin:0 auto;
+  width: 420px;
+  height: 300px;
+}
+
+#googlemap img {
+  max-width: 700px;
+}
+
+#place_images {
+  margin: 0px 0px 20px 0px;
+}
+#place_images img {
+  padding: 1px;
+  margin: 4px 4px 8px 2px;
+  border: 1px solid #ccc;
+  box-shadow: 0px 0px 3px #ccc;
+}
+
+.control-group{
+
+  width:400px;
+}
+
+.search-query{
+  width:320px;
+  }
+
+
+  
+/*#searchit{
+
+  margin-left:40px;
+}
+
+#button{
+  
+  float:right;
+  margin-right:-90px;
+  margin-bottom:25px;
+}
+
+#button .btn{
+
+  border:1px solid black;
+  background:grey;
+
+
+}*/
+
+
+.latlo{
+
+  color:#e0e0e0;
+  margin-bottom:-10px;
+}
+
+#shomap{
+
+  margin-top:-20px;
+}
+
+.showmap >> .gm-style{
+
+  width:600px;
+}

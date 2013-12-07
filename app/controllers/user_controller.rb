@@ -1,5 +1,5 @@
 class UserController < ApplicationController
-
+	
 	def list
 		@Users= User.all
 	end
@@ -20,18 +20,21 @@ class UserController < ApplicationController
     end
 
 	def get_match
+		
 		if (params["/dashboard"])
 			mymeeting = Meeting.find(params["/dashboard"]["id"])
-			Meeting.where(:meetdate => mymeeting.meetdate ).where(:sport_id => mymeeting.sport_id)
+			Meeting.where(:meetdate => mymeeting.meetdate ).where(:sport_id => mymeeting.sport_id).where(:start_at => mymeeting.start_at)
+	 		
+
 	 	end
 	end
 
-	def meeting_radius(meeting)
-	    distance = 20
-	    center_point = [meeting.latitude, meeting.longitude]
-	    box = Geocoder::Calculations.bounding_box(center_point, distance)
+	# def meeting_radius(meeting)
+	#     distance = 20
+	#     center_point = [meeting.latitude, meeting.longitude]
+	#     box = Geocoder::Calculations.bounding_box(center_point, distance)
   		
-  	end
+ #  	end
 
 
 	def edit
